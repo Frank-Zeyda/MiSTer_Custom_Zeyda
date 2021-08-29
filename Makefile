@@ -1,12 +1,15 @@
 # makefile to fail if any command in pipe is failed.
 SHELL = /bin/bash -o pipefail
 
+# location of the ARM gcc toolchain for cross-compilation
+TOOLCHAIN = toolchain/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin
+
 # using gcc version 7.5.0 (Linaro GCC 7.5-2019.12)
 BASE    = arm-linux-gnueabihf
 
-CC      = $(BASE)-gcc
-LD      = $(BASE)-ld
-STRIP   = $(BASE)-strip
+CC      = $(TOOLCHAIN)/$(BASE)-gcc
+LD      = $(TOOLCHAIN)/$(BASE)-ld
+STRIP   = $(TOOLCHAIN)/$(BASE)-strip
 
 ifeq ($(V),1)
 	Q :=

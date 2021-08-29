@@ -27,3 +27,6 @@ host
 *.user
 .vs
 MiSTer
+
+# Added by Frank Zeyda
+toolchain/
